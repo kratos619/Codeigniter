@@ -32,7 +32,7 @@ class User_model extends CI_Model
     public function login_user($username,$password)
     {
         $this->db->where('username',$username);
-        $this->db->where('username',$password);
+        $this->db->where('password',$password);
 
         $result = $this->db->get('user');
 
@@ -42,5 +42,7 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+    
     
 }
