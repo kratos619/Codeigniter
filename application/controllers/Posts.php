@@ -30,8 +30,10 @@ class Posts extends CI_Controller
     public function create()
     {
         $data['title'] = 'create Post';
+        $data['categories'] = $this->post_model->get_categories();
         $this->form_validation->set_rules('title','Title','required');
         $this->form_validation->set_rules('body','Body','required');
+        $this->form_validation->set_rules('categories_id','Category','required');
 
         if($this->form_validation->run() === false){
             
@@ -56,7 +58,7 @@ class Posts extends CI_Controller
         // $this->post_model->edit_post($id);
         // redirect('posts');
         $data['post'] = $this->post_model->get_post($slug);
-
+$data['categories'] = $this->post_model->get_categories();
         if(empty($data['post'])){
             show_404();
         }
