@@ -25,6 +25,11 @@
         <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>posts">Posts</a>
       </li>
+            </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create</a>
+      </li>
+
     </ul>
   </div>
 </nav>
