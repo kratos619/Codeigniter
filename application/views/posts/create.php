@@ -1,6 +1,12 @@
 <h2><?php echo $title; ?></h2>
+<?php if(validation_errors()){ ?>
+<div class="alert alert-dismissible alert-danger">
 <?php echo validation_errors(); ?>
+</div>
+<?php } ?>
+
 <?php echo form_open('posts/create'); ?>
+  
   <fieldset>
     <div class="form-group">
       <label for="title">Title</label>
