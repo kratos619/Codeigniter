@@ -17,6 +17,16 @@
       <label for="exampleInputPassword1">Password</label>
       <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
     </div> -->
+    
+    <div class="form-group">
+      <label for="exampleSelect1">Select Categories</label>
+      <select name="categories_id" class="form-control" id="selectcat">
+      <option >choose...</option>
+        <?php foreach($categories as $cat): ?>
+        <option value="<?php echo $cat['id']; ?>" ><?php echo $cat['name']; ?></option>
+        <?php endforeach ?>
+      </select>
+    </div>
     <div class="form-group">
       <label for="exampleTextarea">Body</label>
       <textarea class="form-control" name="body" id="body" rows="6"></textarea>
