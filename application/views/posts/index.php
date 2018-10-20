@@ -4,3 +4,4 @@
 <p class="lead"><?php echo $post['body']; ?></p>
 <p class="text-muted"><a href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read More</a></p>
 <?php endforeach; ?>
+<hr>

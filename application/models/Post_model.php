@@ -28,4 +28,11 @@ class Post_model extends CI_Model{
     }
 
 
+public function delete_post($id)
+{
+    $this->db->where('id',$id);
+    $this->db->delete('posts');
+    return true;
+}
+
 }
