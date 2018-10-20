@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Ci Blog</a>
+  <a class="navbar-brand" href="<?php echo base_url(); ?>">Ci Blog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,6 +21,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url(); ?>posts">Posts</a>
       </li>
     </ul>
   </div>
