@@ -6,7 +6,8 @@ class Post_model extends CI_Model{
 
     public function get_post($slug = false){
         if($slug === false){
-            $this->db->order_by('id','DESC');
+            $this->db->order_by('posts.id','DESC');
+            $this->db->join('categories','categories.id = posts.cat_id');
             $query = $this->db->get('posts');
             return $query->result_array();
         }
@@ -22,6 +23,7 @@ class Post_model extends CI_Model{
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
+            'cat_id' => $this->input->post('categories_id')
         );
 
         return $this->db->insert('posts',$data);
@@ -43,10 +45,18 @@ public function update_post(){
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
+             'cat_id' => $this->input->post('categories_id')
         );
         $this->db->where('id',$this->input->post('id'));
         return $this->db->update('posts',$data);
     
+}
+
+public function get_categories()
+{
+    $this->db->order_by('name');
+ $query =   $this->db->get('categories');
+ return $query->result_array();
 }
 
 }
