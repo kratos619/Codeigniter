@@ -6,7 +6,7 @@
         <img class="img-fluid rounded" src="<?php echo site_url()?>assets/images/posts/<?php echo $post['postimage']; ?>" alt="">
     </div>
     <div class="col-md-9">
-    <div >
+    <div>
         <p class="text-muted"><small><strong class="badge badge-pill badge-primary">In: <?php echo $post['name']; ?>, Posted On: <?php echo $post['created_at']; ?></strong></small></p>
     
     </div>
