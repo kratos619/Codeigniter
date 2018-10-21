@@ -15,7 +15,7 @@ class Post_model extends CI_Model{
         return $query->row_array();
 
     }
-    public function create_post()
+    public function create_post($post_image)
     {
         $slug = url_title($this->input->post('title'));
         
@@ -23,9 +23,9 @@ class Post_model extends CI_Model{
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
-            'cat_id' => $this->input->post('categories_id')
+            'cat_id' => $this->input->post('categories_id'),
+            'postimage' => $post_image
         );
-
         return $this->db->insert('posts',$data);
     }
 
