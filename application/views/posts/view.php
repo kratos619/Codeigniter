@@ -1,4 +1,7 @@
 <h2><?php echo $post['title'] ?></h2>
+<hr>
+<img class="img-fluid" src="<?php echo site_url()?>assets/images/posts/<?php echo $post['postimage']; ?>" alt="">
+<br>
 <p class="lead"><?php echo $post['body'] ?></p>
 <hr>
 <?php echo form_open('/posts/delete/'.$post['id']); ?>

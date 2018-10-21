@@ -26,7 +26,7 @@
     </div>
     <div class="form-group">
       <label for="exampleTextarea">Body</label>
-      <textarea  class="form-control" name="body" id="body" rows="6">
+      <textarea  class="form-control" name="body" id="editor1" rows="6">
         <?php echo $post['body'] ?>
       </textarea>
     </div>

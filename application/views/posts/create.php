@@ -4,8 +4,7 @@
 <?php echo validation_errors(); ?>
 </div>
 <?php } ?>
-
-<?php echo form_open('posts/create'); ?>
+<?php echo form_open_multipart('posts/create'); ?>
   
   <fieldset>
     <div class="form-group">
@@ -13,11 +12,11 @@
       <input class="form-control" name="title" aria-describedby="title" placeholder="title" type="text">
 
     </div>
-    <!-- <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-    </div> -->
-    
+    <div class="form-group">
+      <label for="exampleInputFile">upload Image</label>
+      <input class="form-control-file" name="userfile" type="file">
+      <small id="fileHelp" class="form-text text-muted">size must be less then 2mb</small>
+    </div>
     <div class="form-group">
       <label for="exampleSelect1">Select Categories</label>
       <select name="categories_id" class="form-control" id="selectcat">
@@ -29,7 +28,7 @@
     </div>
     <div class="form-group">
       <label for="exampleTextarea">Body</label>
-      <textarea class="form-control" name="body" id="body" rows="6"></textarea>
+      <textarea class="form-control" id="editor1" name="body"  rows="5"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
