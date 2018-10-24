@@ -60,7 +60,13 @@ class Posts extends CI_Controller
              //$this->post_model->create_post($post_image);
             //$this->load->library('upload',$config);
             $this->post_model->create_post($post_image);
-           redirect('posts');
+                     $this->load->library('session');    
+            $this->session->set_flashdata(
+                    'post_created' ,
+                    'Post Created Successfully'
+                );
+          
+            redirect('posts');
         }
 
     }
