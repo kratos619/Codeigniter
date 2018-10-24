@@ -10,7 +10,6 @@
     <div class="form-group">
       <label for="title">Title</label>
       <input class="form-control" name="title" aria-describedby="title" placeholder="title" type="text">
-
     </div>
     <div class="form-group">
       <label for="exampleInputFile">upload Image</label>
