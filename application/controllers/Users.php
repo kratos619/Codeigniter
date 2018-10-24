@@ -60,4 +60,39 @@ class Users extends CI_Controller{
             return false;
         }
     }
+
+    //login 
+    public function login()
+    {
+        $data['title']  = "Login Users";
+        $this->form_validation->set_rules('username','Username','required');
+        $this->form_validation->set_rules('password','Password','required');
+        if($this->form_validation->run() === false){
+            $this->load->view('layouts/header');
+            $this->load->view('users/login',$data);
+            $this->load->view('layouts/footer');
+
+        }else{
+            
+            //$username = $this->input->post('username');
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $user_id = $this->users_model->login_user($username,$password);
+            if($user_id){
+                
+                redirect('posts');
+            }else{
+                
+            $this->load->library('session');
+                $data['login_failed'] =  $this->session->set_flashdata('login_failed', 'login is required');
+               $this->load->view('layouts/header');
+                $this->load->view('users/login',$data);
+                $this->load->view('layouts/footer');
+
+               
+            }
+            
+        
+        }
+    }
 }
