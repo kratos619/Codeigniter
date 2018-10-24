@@ -15,7 +15,16 @@ class Users extends CI_Controller{
             $this->load->view('layouts/footer');
 
         }else{
-             die('continue');
+             // encrypt passwod
+             $password = $this->input->post('matchpassword');
+             $options = [
+                'cost' => 11
+                ];
+              $hash =  password_hash($password, PASSWORD_BCRYPT, $options);
+
+              $this->users_model->register_new_user($hash);
+
+              redirect('posts');
         }
     }
 }
