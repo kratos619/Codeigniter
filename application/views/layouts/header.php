@@ -46,11 +46,11 @@
 <div class="container">
 <br>
 <?php $message = $this->session->flashdata('post_created'); ?>
-<?php ?>
+<?php if(isset($message)){ ?>
 <div class="alert alert-success alert-dismissible fade show" role="alert">
    <?php echo '<p>'. $message . '</p>'; ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<?php  ?>
+<?php } ?>
