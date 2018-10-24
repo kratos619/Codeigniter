@@ -26,11 +26,31 @@
         <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>posts">Posts</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create</a>
-      </li>
+      
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Create Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>users/register">Register user</a>
+        </li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
+<br>
+<?php $message = $this->session->flashdata('post_created'); ?>
+<?php ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+   <?php echo '<p>'. $message . '</p>'; ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php  ?>
