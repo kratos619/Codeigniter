@@ -23,7 +23,10 @@ class Users extends CI_Controller{
               $hash =  password_hash($password, PASSWORD_BCRYPT, $options);
 
               $this->users_model->register_new_user($hash);
-
+                $this->session->set_flashdata(
+                    'user_registerd' ,
+                    'You are Registered and can login'
+                );
               redirect('posts');
         }
     }
