@@ -79,7 +79,15 @@ class Users extends CI_Controller{
             $password = $this->input->post('password');
             $user_id = $this->users_model->login_user($username,$password);
             if($user_id){
-               die('success'); 
+               // create Session
+               $user_data = array(
+                   'user_id' => $id,
+                   'username' => $username,
+                   'name' => $name,
+                   'logged_in' =>true
+               ) ;
+
+               $this->session->set_userdata($user_data);
                 //redirect('posts');
             }else{
                 
