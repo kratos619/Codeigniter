@@ -79,19 +79,15 @@ class Users extends CI_Controller{
             $password = $this->input->post('password');
             $user_id = $this->users_model->login_user($username,$password);
             if($user_id){
-                
-                redirect('posts');
+               die('success'); 
+                //redirect('posts');
             }else{
                 
             $this->load->library('session');
-                $data['login_failed'] =  $this->session->set_flashdata('login_failed', 'login is required');
-               $this->load->view('layouts/header');
-                $this->load->view('users/login',$data);
-                $this->load->view('layouts/footer');
-
-               
+           $this->session->set_flashdata('login_failed', 'login is required');
+              $this->session->flashdata('login_failed');
+              //redirect('users/login');
             }
-            
         
         }
     }

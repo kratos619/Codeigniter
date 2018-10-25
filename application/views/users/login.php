@@ -6,13 +6,12 @@
             <?php echo validation_errors(); ?>
             </div>
         <?php } ?>
-        <?php if(isset($login_failed)){ ?>
-            <div class="alert alert-dismissible alert-danger">
+            <br/>
+            <br/>
+                        <div class="alert alert-dismissible alert-danger">
             <?php echo $this->session->flashdata('login_failed');?>
+
             </div>
-        <?php } ?>
-            <br/>
-            <br/>
         <?php echo form_open('users/login'); ?>
         <div class="form-group">
             <label for="username">Username</label>

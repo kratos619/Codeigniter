@@ -54,3 +54,7 @@
   </button>
 </div>
 <?php } ?>
+<!-- login error -->
+<?php //if(isset($error_message)){?>
+
+<?php //  }?>
