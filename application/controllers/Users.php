@@ -81,22 +81,31 @@ class Users extends CI_Controller{
             if($user_id){
                // create Session
                $user_data = array(
-                   'user_id' => $id,
+                   'user_id' => $user_id,
                    'username' => $username,
-                   'name' => $name,
                    'logged_in' =>true
                ) ;
 
                $this->session->set_userdata($user_data);
-                //redirect('posts');
+                redirect('posts');
             }else{
                 
             $this->load->library('session');
-           $this->session->set_flashdata('login_failed', 'login is required');
+            $this->session->set_flashdata('login_failed', 'login is required');
               $this->session->flashdata('login_failed');
-              //redirect('users/login');
+              redirect('users/login');
             }
         
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('logged_in');
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('name');
+        //$this->session->unset_userdata('logged_in');
+        redirect('users/login');
     }
 }

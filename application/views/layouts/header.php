@@ -30,14 +30,19 @@
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <?php if($this->session->userdata('logged_in')): ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create Post</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Create Categories</a>
         </li>
+        <?php endif ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>users/register">Register user</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>users/login">login</a>
         </li>
     </ul>
   </div>
